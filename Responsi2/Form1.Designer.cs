@@ -107,6 +107,7 @@
             this.btnInsert.TabIndex = 6;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnEdit
             // 
@@ -135,6 +136,7 @@
             this.dgv.Name = "dgv";
             this.dgv.Size = new System.Drawing.Size(488, 217);
             this.dgv.TabIndex = 9;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
             // listBox1
             // 
