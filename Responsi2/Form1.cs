@@ -64,20 +64,25 @@ namespace Responsi2
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
                 conn.Open();
-                sql = "@select @ from f_insert(:_nama, :_id_dep)";
+                sql = "@select * from f_insert(:_nama, :_id_dep)";
                 cmd = new NpgsqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue(":_nama", tbNama.Text);
                 cmd.Parameters.AddWithValue(":_id_dep", cbDepartemen.Text);
-                if((int)cmd.ExecuteScalar == 1)
+                if((int)cmd.ExecuteScalar() == 1)
                 {
                     MessageBox.Show("Sukses", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     conn.Close();
-
+                    loadData();
+                    tbNama.Text = cbDepartemen.Text = null;
                 }
-            }*/
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message, "fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
